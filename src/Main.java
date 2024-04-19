@@ -12,15 +12,19 @@ public class Main {
 
         System.out.println("--------------------------------------");
 
-        confronto(prima, seconda);
-        concat(prima, seconda);
-        convert(prima, seconda);
-        conteggio(prima, seconda);
-        sottoString(prima, seconda);
-        conteggio(prima, seconda);
-        vocali(prima, seconda);
-        inverti(prima, seconda);
+//        confronto(prima, seconda);
+//        concat(prima, seconda);
+//        convert(prima, seconda);
+//        conteggio(prima, seconda);
+//        sottoString(prima, seconda);
+//        conteggio(prima, seconda);
+//       trovaVocali(prima, seconda);
+//         inverti(prima, seconda);
+        sostituisci();
+    }
 
+    private static String concatena(String a, String b) {
+        return a.concat(b);
     }
 
     public static void confronto(String a, String b) {
@@ -64,8 +68,8 @@ public class Main {
     public static void sottoString(String a, String b) {
         Scanner s = new Scanner(System.in);
 
-        String c = a.concat(b);
-        String[] split = c.split(" ");
+
+        String[] split = concatena(a, b).split(" ");
         System.out.print("Digita la parola da trovare: ");
         String primaPar = s.nextLine();
 
@@ -86,10 +90,10 @@ public class Main {
 
 
     public static void conteggio(String a, String b) {
-        String c = a.concat(b);
-        String[] split = c.split(" ");
-        String as = c.replace(" ", "");
-        char[] ch = as.toCharArray();
+
+        String[] split = concatena(a, b).split(" ");
+        String togliSpazio = concatena(a, b).replace(" ", "");
+        char[] ch = togliSpazio.toCharArray();
 
         int contParole = 0;
         int contChar = 0;
@@ -100,15 +104,13 @@ public class Main {
         for (int j = 0; j < ch.length; j++) {
             contChar++;
         }
-        System.out.println("Nella frase ci sono " + contParole + " parole");
-        System.out.println("Nella frase ci sono " + contChar + " caratteri senza spazi vuoti");
+        System.out.println("Nella frase ci sono " + contParole + " parole e " + contChar + " caratteri senza spazi vuoti");
 
     }
 
-    public static void vocali(String a, String b) {
+    public static void trovaVocali(String a, String b) {
 
-        String c = a.concat(b);
-        String lowerCase = c.toLowerCase();
+        String lowerCase = concatena(a, b).toLowerCase();
         String cancellaSpazi = lowerCase.replace(" ", "");
         char[] charArray = cancellaSpazi.toCharArray();
         char[] vocali = {'a', 'e', 'i', 'o', 'u'};
@@ -128,16 +130,12 @@ public class Main {
                     switch (vocaliFor1) {
                         case 'a':
                             char1++;
-                            continue;
                         case 'e':
                             char2++;
-                            continue;
                         case 'i':
                             char3++;
-                            continue;
                         case 'o':
                             char4++;
-                            continue;
                         case 'u':
                             char5++;
                     }
@@ -156,7 +154,22 @@ public class Main {
         }
     }
 
-    public static void inverti(String a, String b){
+    public static void inverti(String a, String b) {
+
+        char[] invertire = concatena(a, b).toCharArray();
+
+        for (int i = invertire.length - 1; i >= 0; i--) {
+//            System.out.println(invertire[i]);
+            char invert = invertire[i];
+            System.out.print(invert);
+        }
+    }
+
+    public static void sostituisci() {
+
+        String testo = "Questo è un esercizio per sostituire una lettera di una stringa";
+        String sostituito = testo.replace("r", "z");
+        System.out.println(sostituito);
 
     }
 }
