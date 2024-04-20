@@ -20,7 +20,7 @@ public class Main {
 //        conteggio(prima, seconda);
 //       trovaVocali(prima, seconda);
 //         inverti(prima, seconda);
-        sostituisci();
+        sostituisci(prima, seconda);
     }
 
     private static String concatena(String a, String b) {
@@ -159,16 +159,20 @@ public class Main {
         char[] invertire = concatena(a, b).toCharArray();
 
         for (int i = invertire.length - 1; i >= 0; i--) {
-//            System.out.println(invertire[i]);
             char invert = invertire[i];
             System.out.print(invert);
         }
     }
 
-    public static void sostituisci() {
+    public static void sostituisci(String a, String b) {
+        Scanner s = new Scanner(System.in);
 
-        String testo = "Questo è un esercizio per sostituire una lettera di una stringa";
-        String sostituito = testo.replace("r", "z");
+        System.out.print("Digita la prima lettera da sostituire: ");
+        String prima = s.nextLine();
+        System.out.print("Digita la seconda lettera che dovrà essere sostituida da: " + prima + " :");
+        String seconda = s.nextLine();
+
+        String sostituito = concatena(a, b).replace(prima, seconda);
         System.out.println(sostituito);
 
     }
