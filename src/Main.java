@@ -21,6 +21,7 @@ public class Main {
 //       trovaVocali(prima, seconda);
 //         inverti(prima, seconda);
         sostituisci(prima, seconda);
+
     }
 
     private static String concatena(String a, String b) {
@@ -167,9 +168,9 @@ public class Main {
     public static void sostituisci(String a, String b) {
         Scanner s = new Scanner(System.in);
 
-        System.out.print("Digita la prima lettera da sostituire: ");
+        System.out.print("Digita il carattere da sostituire: ");
         String prima = s.nextLine();
-        System.out.print("Digita la seconda lettera che dovrà essere sostituida da: " + prima + " :");
+        System.out.print("Digita il carattere che dovrà essere sostituita da " + prima + " :");
         String seconda = s.nextLine();
 
         String sostituito = concatena(a, b).replace(prima, seconda);
