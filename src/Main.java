@@ -1,5 +1,4 @@
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,13 +18,13 @@ public class Main {
 //        sottoString(prima, seconda);
 //        conteggio(prima, seconda);
 //       trovaVocali(prima, seconda);
-//         inverti(prima, seconda);
+        //      inverti(prima, seconda);
         sostituisci(prima, seconda);
 
     }
 
     private static String concatena(String a, String b) {
-        return a.concat(b);
+        return a + b;
     }
 
     public static void confronto(String a, String b) {
@@ -167,14 +166,26 @@ public class Main {
 
     public static void sostituisci(String a, String b) {
         Scanner s = new Scanner(System.in);
+        String testo = a + b;
 
         System.out.print("Digita il carattere da sostituire: ");
-        String prima = s.nextLine();
-        System.out.print("Digita il carattere che dovrà essere sostituita da " + prima + " :");
-        String seconda = s.nextLine();
+        char primoCarattere = s.next().charAt(0);
+        System.out.print("Digita il carattere che dovrà essere sostituita da " + primoCarattere + " :");
+        char secondoCarattere = s.next().charAt(0);
 
-        String sostituito = concatena(a, b).replace(prima, seconda);
-        System.out.println(sostituito);
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < testo.length(); i++) {
+            char testoFor = testo.charAt(i);
+
+            if (testoFor == primoCarattere) {
+                sb.append(secondoCarattere);
+            } else {
+                sb.append(testoFor);
+            }
+
+        }
+        System.out.println(sb);
 
     }
 }
