@@ -18,7 +18,7 @@ public class Main {
 //        sottoString(prima, seconda);
 //        conteggio(prima, seconda);
 //       trovaVocali(prima, seconda);
-        //      inverti(prima, seconda);
+//      inverti(prima, seconda);
         sostituisci(prima, seconda);
 
     }
