@@ -173,19 +173,19 @@ public class Main {
         System.out.print("Digita il carattere che dovrà essere sostituita da " + primoCarattere + " :");
         char secondoCarattere = s.next().charAt(0);
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringa = new StringBuilder();
 
         for (int i = 0; i < testo.length(); i++) {
-            char testoFor = testo.charAt(i);
+            char testoCicloFor = testo.charAt(i);
 
-            if (testoFor == primoCarattere) {
-                sb.append(secondoCarattere);
+            if (testoCicloFor == primoCarattere) {
+                stringa.append(secondoCarattere);
             } else {
-                sb.append(testoFor);
+                stringa.append(testoCicloFor);
             }
 
         }
-        System.out.println(sb);
+        System.out.println(stringa);
 
     }
 }
