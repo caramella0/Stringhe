@@ -11,16 +11,16 @@ public class Main {
 
         System.out.println("--------------------------------------");
 
-//        confronto(prima, seconda);
-//        concat(prima, seconda);
-//        convert(prima, seconda);
-//        conteggio(prima, seconda);
-//        sottoString(prima, seconda);
-//        conteggio(prima, seconda);
-//       trovaVocali(prima, seconda);
-//      inverti(prima, seconda);
+        confronto(prima, seconda);
+        concat(prima, seconda);
+        convert(prima, seconda);
+        conteggio(prima, seconda);
+        sottoString(prima, seconda);
+        conteggio(prima, seconda);
+        trovaVocali(prima, seconda);
+        inverti(prima, seconda);
         sostituisci(prima, seconda);
-
+        calcoloMedia();
     }
 
     private static String concatena(String a, String b) {
@@ -172,7 +172,6 @@ public class Main {
         char primoCarattere = s.next().charAt(0);
         System.out.print("Digita il carattere che dovrà essere sostituita da " + primoCarattere + " :");
         char secondoCarattere = s.next().charAt(0);
-
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < testo.length(); i++) {
@@ -186,7 +185,29 @@ public class Main {
 
         }
         System.out.println(sb);
+    }
 
+    public static void calcoloMedia() {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Float> listaNumeri = new ArrayList<>();
+
+        System.out.print("Quanti numeri vuoi inserire? ");                  //Scelta di quanti numeri inserire
+        float sceltaNumeri = scanner.nextInt();
+
+        while (sceltaNumeri - 1 >= listaNumeri.size()) {          //Inserimento numeri nell' arrayList
+            System.out.print("Inserisci il numero: ");
+            float numeri = scanner.nextInt();
+            listaNumeri.add(numeri);
+        }
+
+        float somma = 0;                                                  //Calcola la somma di tutti i numeri presenti
+        for (Float integer : listaNumeri) {                               //nell' arrayList
+            somma = somma + integer;
+        }
+
+        float risultatoMedia = somma / listaNumeri.size();          //Eseguo l'operazione del calcolo della media
+
+        System.out.println(risultatoMedia);                                 //Stampo il risultato
     }
 }
 
